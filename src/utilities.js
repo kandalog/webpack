@@ -1,0 +1,1 @@
+export const NiJou = num => num * 2;
