@@ -1,10 +1,15 @@
 const path = require('path');
 
+const outputPath = path.resolve(__dirname, 'dist')
+
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js',
+    path: outputPath,
+    filename: 'main.js'
+  },
+  devServer: {
+    contentBase: outputPath
   }
 }
 
@@ -25,6 +30,9 @@ entry bundleする対象を設定
 output {
   path 出力先を変更
   filename 解決時のファイル名を設定
+}
+devServer {
+  contentBase サーバー立ち上げ時に開くファイルを指定
 }
 
 */
