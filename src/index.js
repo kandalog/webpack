@@ -14,4 +14,4 @@ document.body.classList.add('haikei')
 
 const image = new Image();
 image.src = logo;
-document.body.appendChild(logo)
+document.body.appendChild(image)

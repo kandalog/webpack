@@ -20,7 +20,11 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,
-        loader: 'url-loader'
+        loader: 'url-loader',
+        options: {
+          limit: 2048,//2KBを超える場合
+          name: './img/[name].[ext]'
+        }
       }
     ]
   }
@@ -54,6 +58,8 @@ module {
     }
   ]
 }
+
+file-loaderはoptionsで設定する
 devServer {
   contentBase サーバー立ち上げ時に開くファイルを指定
 }
