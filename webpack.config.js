@@ -6,6 +6,17 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js'
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }
+    ]
+  },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist')
   }
@@ -28,6 +39,16 @@ entry bundleする対象を設定
 output {
   path 出力先を変更
   filename 解決時のファイル名を設定
+}
+module {
+  rules[
+    {
+      text 対象のファイルを正規表現で
+      use  使用するローダーを設定
+
+      注意点(ローダーを複数設定する場合下から順に走る。 依存関係に注意)
+    }
+  ]
 }
 devServer {
   contentBase サーバー立ち上げ時に開くファイルを指定
