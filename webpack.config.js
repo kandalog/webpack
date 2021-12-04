@@ -6,6 +6,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js'
   },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist')
+  },
   module: {
     rules: [
       {
@@ -14,11 +17,13 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
+      },
+      {
+        //(i)拡張子大文字を許容 (?)ない場合を考慮
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
+        loader: 'url-loader'
       }
     ]
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, 'dist')
   }
 }
 
