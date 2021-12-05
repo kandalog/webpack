@@ -2,6 +2,7 @@ import _ from 'lodash';
 import './style.css'
 import logo from './logo.png'
 
+
 const component = () => {
   const element = document.createElement('div');
   const array = ['Hello', 'webpack', '!!']
