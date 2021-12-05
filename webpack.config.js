@@ -25,6 +25,16 @@ module.exports = {
           limit: 2048,//2KBを超える場合
           name: './img/[name].[ext]'
         }
+      },
+      {
+        test: /\.m?jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }
     ]
   }
